@@ -18,12 +18,12 @@ public class CustomerController {
     private ICustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
+    public ResponseEntity<Object> createCustomer(@RequestBody Customer customer){
         return new ResponseEntity<>(customerService.create(customer), HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<Customer>> getAllCustomers(){
+    public ResponseEntity<Object> getAllCustomers(){
         return new ResponseEntity<>(customerService.getAllCustomers(), HttpStatus.OK);
     }
 
